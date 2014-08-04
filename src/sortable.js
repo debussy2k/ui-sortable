@@ -134,9 +134,9 @@ angular.module('ui.sortable', [])
               // respect their order (even if we cancel, the order of the
               // comments are still messed up).
               if (hasSortingHelper(element, ui) && !ui.item.sortable.received) {
-                // restore all the savedNodes except .ui-sortable-helper element
-                // (which is placed last). That way it will be garbage collected.
-                savedNodes = savedNodes.not(savedNodes.last());
+                // restore all the savedNodes except .ui-sortable-helper element.
+                // That way it will be garbage collected.
+                savedNodes = savedNodes.not(savedNodes.find('.ui-sortable-helper'));
               }
               savedNodes.appendTo(element);
 
